@@ -23,5 +23,5 @@ api:
      dynamodb:
 #     endpoint: http://192.168.137.128:4569/
       endpoint: 
-      accesskey: AKIAJGDURMNYP426BAUQ
-      secretkey: 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
+      accesskey: 
+      secretkey: 
