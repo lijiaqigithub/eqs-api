@@ -1,0 +1,18 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "sample.test.service.ServiceProperties",
+      "name": "",
+      "type": "sample.test.service.ServiceProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "sample.test.service.ServiceProperties",
+      "defaultValue": "http:\/\/localhost:8080\/vs",
+      "name": "vehicle-service-root-url",
+      "type": "java.lang.String"
+    }
+  ]
+}
