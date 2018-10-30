@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>eqs-sample-app</artifactId>
+    <artifactId>EQS-training-sample-app</artifactId>
     <version>0.1.0</version>
 
     <parent>
@@ -13,6 +13,26 @@
         <version>2.0.3.RELEASE</version>
     </parent>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <cobertura.plugin.version>2.7</cobertura.plugin.version>
+    </properties>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>${cobertura.plugin.version}</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -25,15 +45,47 @@
             <scope>test</scope>
         </dependency>
 
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
-    </dependencies>
+        </dependency>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>1.11.412</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.derjust</groupId>
+            <artifactId>spring-data-dynamodb</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+
+    </dependencies>
 
 
     <build>
@@ -41,6 +93,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <!--<configuration>-->
+                    <!--<tagBase>http://svn.mycompany.com:8081/repository/spring-basic/</tagBase>-->
+                <!--</configuration>-->
             </plugin>
         </plugins>
     </build>

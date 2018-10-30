@@ -1,9 +1,11 @@
 package com.infy.controller;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.infy.vo.EmployeeDetails;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +20,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.ArrayList;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -25,9 +29,6 @@ public class HelloControllerTest {
 
     @Autowired
     private MockMvc mvc;
-
-    @Autowired
-    private WebApplicationContext context;
 
 
     @Before
@@ -41,6 +42,18 @@ public class HelloControllerTest {
     public void getHello() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
+                .andExpect(content().string(equalTo("Welcome to EQS training sample application !!")));
+    }
+
+    @Test
+    public void getEmployeeDetails() throws Exception {
+        ArrayList<EmployeeDetails> employeeDetails = new ArrayList<EmployeeDetails>();
+        employeeDetails.add(new EmployeeDetails("Employee1","E123",23,1000000));
+        employeeDetails.add(new EmployeeDetails("Employee2","E124",29,2000000));
+        employeeDetails.add(new EmployeeDetails("Employee3","E125",32,3000000));
+        employeeDetails.add(new EmployeeDetails("Employee4","E126",36,4000000));
+        employeeDetails.add(new EmployeeDetails("Employee5","E127",39,5000000));
+        mvc.perform(MockMvcRequestBuilders.get("/employee-details.html").accept(MediaType.TEXT_HTML_VALUE))
+                .andExpect(status().isOk());
     }
 }

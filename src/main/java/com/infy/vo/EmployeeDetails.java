@@ -10,6 +10,9 @@ public class EmployeeDetails {
     public Integer empAge;
     public Integer empSalary;
 
+    public EmployeeDetails(){
+
+    }
     public EmployeeDetails(String empName, String empNumber, Integer empAge, Integer empSalary ){
         this.empName=empName;
         this.empNumber=empNumber;

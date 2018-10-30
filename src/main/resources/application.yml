@@ -1,0 +1,27 @@
+---
+swagger:
+  api:
+    title: EQS-API
+    contact.info: Team
+    licence.url: #
+    description:
+    groupName: eqs-group
+    version: 1.0
+  terms.of.service.url: #
+  enabled: true
+  
+server:
+  port: 8090
+  servlet: 
+    context-path: /eqs-group
+app:
+  jwtSecret: SldUU3VwZXJTZWNyZXRLZXk=
+  jwtExpirationInMs: 1200000
+  
+api:
+   aws:
+     dynamodb:
+#     endpoint: http://192.168.137.128:4569/
+      endpoint: 
+      accesskey: AKIAJGDURMNYP426BAUQ
+      secretkey: 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

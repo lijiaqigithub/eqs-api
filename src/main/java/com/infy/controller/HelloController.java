@@ -6,9 +6,8 @@ package com.infy.controller;
 import com.infy.vo.EmployeeDetails;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 
@@ -30,6 +29,7 @@ public class HelloController {
         employeeDetails.add(new EmployeeDetails("Employee3","E125",32,3000000));
         employeeDetails.add(new EmployeeDetails("Employee4","E126",36,4000000));
         employeeDetails.add(new EmployeeDetails("Employee5","E127",39,5000000));
+        employeeDetails.add(new EmployeeDetails("Employee6","E128",40,6000000));
 
         StringBuilder startHTML = new StringBuilder("<html><body><table border=\"1\"><colgroup><col /><col /><col /><col /></colgroup><tbody><tr><th>Employee Name</th><th>Employee Id</th><th>Employee Age</th><th>Employee Salary</th></tr>");
 
