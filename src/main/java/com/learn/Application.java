@@ -1,6 +1,6 @@
 package com.learn;
 /**
- * Created by rishi.khurana on 9/12/2018.
+ * Created by rishi.khurana on 9/12/2018..
  */
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
